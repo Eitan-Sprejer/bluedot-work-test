@@ -50,7 +50,7 @@
 
 ## Slide 8: My Approach
 
-"I spent most of my time on problem diagnosis, researching the talent pipeline to identify which specific bottleneck this event should address. I think the Community Lead's most important job is knowing why an event exists, not just how to run one. The theory of impact is the core of this submission. The full methodology and research are in the appendices. Happy to discuss any of this. Thanks."
+"My approach was three parts. First, diagnose the problem: where exactly is the talent pipeline breaking? Second, design the solution to match that specific bottleneck, and iterate on it. Third, build the system to measure whether it actually works. All the documentation is in a Google Doc with the full submission, and I also have a GitHub repository with all the research, methodology, and presentation materials. Happy to discuss any of this. Thanks."
 
 ---
 
