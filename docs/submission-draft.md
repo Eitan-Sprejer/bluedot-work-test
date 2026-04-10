@@ -4,7 +4,9 @@
 **Eitan Sprejer** / eitan@baish.com.ar
 
 **Links:**
+- Google Doc (live version): [Full Document](https://docs.google.com/document/d/1YO169H3I86T2RetWK-AHvBRTxid3qoSdI82jJIGEHZI/edit)
 - Loom walkthrough: [Video](https://www.loom.com/share/62a06c03d60a4d548866fcf437b0835a)
+- Presentation slides: [PDF on Google Drive](https://drive.google.com/file/d/1pVtN6Lg-4qDls8rcrtWPE-ieNlTL8f0q/view)
 - Airtable base: [BlueDot Talent Marketplace](https://airtable.com/appFrb6UQD9xMbNZU)
 - Repository: [github.com/Eitan-Sprejer/bluedot-work-test](https://github.com/Eitan-Sprejer/bluedot-work-test)
 
