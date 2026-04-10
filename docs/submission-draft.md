@@ -1,6 +1,12 @@
 # BlueDot Impact Community Lead Work Test
 ## Curated Talent Marketplace for AI Safety
 
+**Eitan Sprejer** / eitan@baish.com.ar
+
+**Links:**
+- Airtable base: [BlueDot Talent Marketplace](https://airtable.com/appFrb6UQD9xMbNZU)
+- Repository: [github.com/Eitan-Sprejer/bluedot-work-test](https://github.com/Eitan-Sprejer/bluedot-work-test)
+
 ---
 
 # Executive Summary
