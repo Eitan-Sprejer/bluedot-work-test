@@ -1,0 +1,76 @@
+BlueDot Impact
+Assignment
+Community Lead Work Test: Task Instructions
+This work test assesses your ability to design events and build systems that make things run smoothly. You have 3 hours total to complete this task.
+
+
+
+Your mission
+Design an event that helps to accelerate talent in AI safety, and build the systems to ensure it improves month after month.
+
+
+
+Part 1: Event Design (1.5-2 hours)
+BlueDot is launching a monthly in-person event series in San Francisco (~3 hours, ~50 people). 
+
+Rather than generic networking, we want you to choose a specific outcome, and design the event accordingly. 
+
+This might be things like finding project collaborators, getting jobs/hiring talent, founders meeting funders, etc. 
+
+Design one edition of this event. Convince us it would actually work to achieve the goal you set out.
+
+
+
+Part 2: Systems (1-1.5 hours)
+Make it repeatable. Build or design a system that would help you run and improve this event every month.
+
+If you build something (e.g. an Airtable base), include a link with sharing enabled.
+
+
+
+Instructions
+Spend 3 hours completing this work test.
+
+Submit within 7 days of receiving this email. However, the sooner the better.
+
+Submit a single Google Doc URL or attach a PDF covering all parts. If you've built something (e.g., an Airtable base), include a link with sharing enabled.
+
+This is a paid work test. After you’ve submitted the work test, complete this form to request $100 payment.
+
+We care about speed, so we will pay you $150 IF you submit within 3 days.
+
+Depending on how quick you are, request the appropriate amount of money.
+
+Demonstrate your unique depth of expertise or skills somewhere in your submission. Don't try to be comprehensive everywhere - invest your time strategically so you show us your capability.
+
+Optionally, include a scrappy 3-5 min Loom video explaining your work test. Don't make this polished, just talk through what you did and why.
+
+
+
+Anticipated questions
+I'm unclear about a requirement during the test. What should I do?
+
+Make a reasonable assumption about the requirements (e.g. imagine you asked us / surveyed users, and we said something that didn't shock you). Briefly document your uncertainty + assumption in your accompanying documentation.
+
+What if I don't finish the task in the time allocated?
+
+Submit the work you have done, even if it's incomplete. You could include documentation explaining where you got to and what next steps you think you might need to pursue.
+
+How will my work be used?
+
+Your work will only be used to evaluate candidates for this position. We appreciate that standard contracting rates would be higher than for this work test, and so if we do want to use your work for any other purposes, we'll agree this separately with you.
+
+Submission
+Files
+No file chosen
+
+Upload File(s)
+or drag and drop here
+
+Notes
+
+
+
+Submit Assignment
+Powered by 
+Privacy PolicySecurityVulnerability Disclosure

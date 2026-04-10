@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BlueDot Talent Marketplace - Work Test Presentation</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --blue-primary: #1B4FD8;
+    --blue-dark: #0F2E6B;
+    --blue-light: #E8EEFB;
+    --blue-accent: #3B7DFF;
+    --text-dark: #1A1A2E;
+    --text-mid: #4A4A6A;
+    --text-light: #7A7A9A;
+    --white: #FFFFFF;
+    --off-white: #F7F8FC;
+    --accent-green: #10B981;
+    --accent-amber: #F59E0B;
+    --accent-red: #EF4444;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--text-dark);
+    color: var(--text-dark);
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .slide-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+  }
+
+  .slide {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 80px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+  }
+
+  .slide.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Slide backgrounds */
+  .bg-white { background: var(--white); }
+  .bg-blue { background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-primary) 100%); color: var(--white); }
+  .bg-light { background: var(--off-white); }
+  .bg-dark { background: var(--text-dark); color: var(--white); }
+
+  /* Typography */
+  .slide-number {
+    position: absolute;
+    bottom: 30px;
+    right: 40px;
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.4;
+  }
+
+  .brand-mark {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    opacity: 0.5;
+  }
+
+  .brand-mark .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--blue-primary);
+  }
+
+  .bg-blue .brand-mark .dot,
+  .bg-dark .brand-mark .dot { background: var(--white); }
+
+  h1 {
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+  }
+
+  h2 {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+
+  .subtitle {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--text-mid);
+    max-width: 700px;
+  }
+
+  .bg-blue .subtitle,
+  .bg-dark .subtitle { color: rgba(255,255,255,0.75); }
+
+  .highlight { color: var(--blue-primary); }
+  .bg-blue .highlight { color: var(--accent-amber); }
+  .bg-dark .highlight { color: var(--blue-accent); }
+
+  /* Stats grid */
+  .stats-row {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  .stat-card {
+    flex: 1;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 16px;
+    padding: 28px;
+  }
+
+  .bg-white .stat-card,
+  .bg-light .stat-card {
+    background: var(--white);
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+
+  .stat-number {
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+
+  .stat-label {
+    font-size: 15px;
+    font-weight: 500;
+    opacity: 0.7;
+  }
+
+  /* Evidence list */
+  .evidence-list {
+    list-style: none;
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .evidence-list li {
+    font-size: 18px;
+    line-height: 1.5;
+    padding-left: 28px;
+    position: relative;
+  }
+
+  .evidence-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--blue-primary);
+  }
+
+  .bg-blue .evidence-list li::before { background: var(--accent-amber); }
+  .bg-dark .evidence-list li::before { background: var(--blue-accent); }
+
+  /* Two column */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-top: 36px;
+  }
+
+  .col-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 32px;
+  }
+
+  .bg-white .col-card,
+  .bg-light .col-card {
+    background: var(--white);
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+
+  .col-card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .col-card p {
+    font-size: 16px;
+    line-height: 1.6;
+    opacity: 0.8;
+  }
+
+  /* Timeline */
+  .timeline {
+    display: flex;
+    gap: 16px;
+    margin-top: 36px;
+  }
+
+  .timeline-block {
+    flex: 1;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .timeline-block.t-blue { background: var(--blue-primary); color: white; }
+  .timeline-block.t-light { background: var(--blue-light); color: var(--blue-dark); }
+  .timeline-block.t-accent { background: #ECFDF5; color: #065F46; }
+  .timeline-block.t-amber { background: #FEF3C7; color: #92400E; }
+
+  .timeline-block .t-time {
+    font-size: 13px;
+    font-weight: 600;
+    opacity: 0.7;
+    margin-bottom: 6px;
+  }
+
+  .timeline-block .t-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .timeline-block .t-detail {
+    font-size: 13px;
+    opacity: 0.8;
+  }
+
+  /* Layers */
+  .layers-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .layer-card {
+    background: var(--white);
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    padding: 20px 16px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+
+  .layer-card .layer-num {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--blue-primary);
+    margin-bottom: 8px;
+  }
+
+  .layer-card .layer-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .layer-card .layer-tool {
+    font-size: 12px;
+    color: var(--text-light);
+  }
+
+  .layer-card.layer-highlight {
+    background: var(--blue-primary);
+    color: white;
+    border-color: var(--blue-primary);
+  }
+
+  .layer-card.layer-highlight .layer-num { color: rgba(255,255,255,0.7); }
+  .layer-card.layer-highlight .layer-tool { color: rgba(255,255,255,0.7); }
+
+  /* Quote */
+  .quote-block {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.5;
+    font-style: italic;
+    max-width: 800px;
+    margin-top: 20px;
+    padding-left: 24px;
+    border-left: 4px solid var(--blue-accent);
+  }
+
+  .bg-dark .quote-block { border-left-color: var(--blue-accent); }
+
+  /* Navigation */
+  .nav-hint {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 13px;
+    color: rgba(255,255,255,0.3);
+    z-index: 100;
+  }
+
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: var(--blue-accent);
+    transition: width 0.4s ease;
+    z-index: 100;
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progress"></div>
+
+<div class="slide-container">
+
+  <!-- Slide 1: Title -->
+  <div class="slide bg-blue active" data-index="0">
+    <div class="brand-mark"><div class="dot"></div> BlueDot Impact</div>
+    <h1>Curated Talent<br>Marketplace</h1>
+    <p class="subtitle">Community Lead Work Test / Eitan Sprejer</p>
+    <div class="slide-number">1 / 10</div>
+  </div>
+
+  <!-- Slide 2: The Problem -->
+  <div class="slide bg-white" data-index="1">
+    <div class="brand-mark"><div class="dot"></div> BlueDot Impact</div>
+    <h2>No Fast Track for <span class="highlight">Top Talent</span></h2>
+    <div class="stats-row" style="margin-top: 48px">
+      <div class="stat-card">
+        <div class="stat-number highlight">7,000+</div>
+        <div class="stat-label">Alumni trained</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" style="color: var(--accent-red)">10-30%</div>
+        <div class="stat-label">Cycle into another fellowship instead of working</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" style="color: var(--accent-green)">$150M+</div>
+        <div class="stat-label">Funding available, wanting more good applications</div>
+      </div>
+    </div>
+    <div class="slide-number">2 / 10</div>
+  </div>
+
+  <!-- Slide 3: Where the Pipeline Breaks -->
+  <div class="slide bg-dark" data-index="2">
+    <div class="brand-mark"><div class="dot"></div> BlueDot Impact</div>
+    <h2>Where the Pipeline Breaks</h2>
+    <ul class="evidence-list" style="margin-top: 40px">
+      <li><strong>Orgs can't find talent.</strong> They need autonomous contributors. Those people are in BlueDot's database.</li>
+      <li><strong>Funders have more money than applications.</strong> People don't know what to apply for.</li>
+      <li><strong>Training doesn't convert to work.</strong> Fellowship alumni cycle instead of getting hired.</li>
+      <li><strong>Institutions don't coordinate.</strong> Orgs, funders, and programs operate in silos.</li>
+    </ul>
+    <div class="slide-number">3 / 10</div>
+  </div>
+
+  <!-- Slide 4: My Contribution -->
+  <div class="slide bg-white" data-index="3">
+    <div class="brand-mark"><div class="dot"></div> BlueDot Impact</div>
+    <h2>Strategy First</h2>
+    <div class="quote-block" style="margin-top: 40px">
+      "Great talent needs a fast track. The Community Lead's most important job is knowing <em>why</em> an event exists, not just how to run one."
+    </div>
+    <ul class="evidence-list" style="margin-top: 40px">
+      <li>Researched the full talent pipeline before choosing a format</li>
+      <li>Identified the specific bottleneck: training-to-first-impact</li>
+      <li>Designed to solve that, not be "another networking night"</li>
+    </ul>
+    <div class="slide-number">4 / 10</div>
+  </div>
+
+  <!-- Slide 5: The Solution -->
+  <div class="slide bg-blue" data-index="4">
+    <div class="brand-mark"><div class="dot"></div> BlueDot Impact</div>
+    <h2>Two Sides of the Room</h2>
+    <p class="subtitle">Monthly. Invite-only. 50 people. 3 hours.</p>
+    <div class="two-col" style="margin-top: 40px">
+      <div class="col-card">
+        <h3>Institutional Leaders</h3>
+        <p>10-15 people. Funders, hiring managers, program directors.</p>
+      </div>
+      <div class="col-card">
+        <h3>Top Talent</h3>
+        <p>30-35 people. BlueDot's highest-rated alumni. Invite-only.</p>
+      </div>
+    </div>
+    <div class="slide-number">5 / 10</div>
+  </div>
+
+  <!-- Slide 6: Why BlueDot -->
+  <div class="slide bg-light" data-index="5">
+    <div class="brand-mark"><div class="dot"></div> BlueDot Impact</div>
+    <h2>Why <span class="highlight">Only BlueDot</span> Can Do This</h2>
+    <div class="two-col">
+      <div class="col-card">
+        <h3>1. Curated Talent Database</h3>
+        <p>7,000+ alumni with performance data: course evaluations, project quality, facilitator recommendations. BlueDot knows who the top 1% are. No one else has this depth of talent signal.</p>
+      </div>
+      <div class="col-card">
+        <h3>2. Institutional Relationships</h3>
+        <p>Direct access to funders, safety orgs, and programs on the demand side. BlueDot can get the decision-makers in the room. The combination is the moat.</p>
+      </div>
+    </div>
+    <p class="subtitle" style="margin-top: 32px; color: var(--text-mid)">The curation is the product. The promise: every person you meet is worth your time.</p>
+    <div class="slide-number">6 / 10</div>
+  </div>
+
+  <!-- Slide 7: The Format -->
+  <div class="slide bg-white" data-index="6">
+    <div class="brand-mark"><div class="dot"></div> BlueDot Impact</div>
+    <h2>3 Hours. 50 People. <span class="highlight">10 Conversations.</span></h2>
+    <div class="timeline">
+      <div class="timeline-block t-blue">
+        <div class="t-time">0:00 - 0:10</div>
+        <div class="t-title">Welcome</div>
+        <div class="t-detail">Quick orientation</div>
+      </div>
+      <div class="timeline-block t-blue">
+        <div class="t-time">0:10 - 1:25</div>
+        <div class="t-title">Pre-matched 1-on-1s</div>
+        <div class="t-detail">5 rounds x 15 min</div>
+      </div>
+      <div class="timeline-block t-light">
+        <div class="t-time">1:25 - 1:35</div>
+        <div class="t-title">Break</div>
+        <div class="t-detail">Refresh</div>
+      </div>
+      <div class="timeline-block t-blue">
+        <div class="t-time">1:35 - 2:40</div>
+        <div class="t-title">Self-selected 1-on-1s</div>
+        <div class="t-detail">4-5 rounds x 15 min</div>
+      </div>
+      <div class="timeline-block t-accent">
+        <div class="t-time">2:40 - 3:00</div>
+        <div class="t-title">Next Steps</div>
+        <div class="t-detail">Action capture</div>
+      </div>
+    </div>
+    <div class="stats-row" style="margin-top: 28px">
+      <div class="stat-card">
+        <div class="stat-number highlight">~10</div>
+        <div class="stat-label">Quality conversations per person</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" style="color: var(--accent-green)">$12-28</div>
+        <div class="stat-label">Cost per attendee (vs. $1,200 at EAG)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number highlight">15 min</div>
+        <div class="stat-label">Per 1-on-1 (depth happens in follow-up)</div>
+      </div>
+    </div>
+    <div class="slide-number">7 / 10</div>
+  </div>
+
+  <!-- Slide 8: The System -->
+  <div class="slide bg-light" data-index="7">
+    <div class="brand-mark"><div class="dot"></div> BlueDot Impact</div>
+    <h2>The System: <span class="highlight">5 Layers</span></h2>
+    <p class="subtitle">Every event generates data. That data makes the next event better.</p>
+    <div class="layers-grid">
+      <div class="layer-card">
+        <div class="layer-num">LAYER 1</div>
+        <div class="layer-title">Operations</div>
+        <div class="layer-tool">Swapcard + Luma</div>
+      </div>
+      <div class="layer-card">
+        <div class="layer-num">LAYER 2</div>
+        <div class="layer-title">Data Collection</div>
+        <div class="layer-tool">Forms + Surveys</div>
+      </div>
+      <div class="layer-card layer-highlight">
+        <div class="layer-num">LAYER 3</div>
+        <div class="layer-title">Participant Tracking</div>
+        <div class="layer-tool">Facilitator calls</div>
+      </div>
+      <div class="layer-card">
+        <div class="layer-num">LAYER 4</div>
+        <div class="layer-title">Outcome Tracking</div>
+        <div class="layer-tool">Airtable (live)</div>
+      </div>
+      <div class="layer-card">
+        <div class="layer-num">LAYER 5</div>
+        <div class="layer-title">Improvement Engine</div>
+        <div class="layer-tool">Monthly retros</div>
+      </div>
+    </div>
+    <p class="subtitle" style="margin-top: 24px; font-size: 18px; color: var(--text-mid)"><strong>Layer 3 is the differentiator.</strong> Every participant gets an assigned facilitator who does monthly calls to convert connections into outcomes. The event alone doesn't produce results. Dedicated follow-up does.</p>
+    <div class="slide-number">8 / 10</div>
+  </div>
+
+  <!-- Slide 9: Metrics -->
+  <div class="slide bg-dark" data-index="8">
+    <div class="brand-mark"><div class="dot"></div> BlueDot Impact</div>
+    <h2>What We Measure</h2>
+    <p class="subtitle">Real outcomes, not just survey scores.</p>
+    <div class="two-col" style="margin-top: 28px">
+      <div class="col-card">
+        <h3 style="color: var(--accent-amber)">North Star (Tier 1)</h3>
+        <p>Tracked via facilitator calls, not surveys:</p>
+        <ul class="evidence-list" style="margin-top: 12px; gap: 10px">
+          <li style="font-size: 16px">Job interviews and hires</li>
+          <li style="font-size: 16px">Funding applications submitted</li>
+          <li style="font-size: 16px">Projects and collaborations started</li>
+          <li style="font-size: 16px">Program placements (MATS, etc.)</li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <h3 style="color: var(--blue-accent)">Leading Indicators (Tier 2-3)</h3>
+        <p>Post-event survey (EAG framework):</p>
+        <ul class="evidence-list" style="margin-top: 12px; gap: 10px">
+          <li style="font-size: 16px">Plan changes made</li>
+          <li style="font-size: 16px">Counterfactual attribution</li>
+          <li style="font-size: 16px">Meaningful connections per person</li>
+          <li style="font-size: 16px">Likelihood to Recommend (1-10)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-number">9 / 10</div>
+  </div>
+
+  <!-- Slide 10: Close -->
+  <div class="slide bg-blue" data-index="9">
+    <div class="brand-mark"><div class="dot"></div> BlueDot Impact</div>
+    <h1>The talent exists.<br>The opportunities exist.<br><span style="color: var(--accent-amber)">Let's connect them.</span></h1>
+    <p class="subtitle" style="margin-top: 24px">Monthly. Curated. Outcome-tracked.<br>The only talent marketplace for AI safety in SF.</p>
+    <div class="stats-row" style="margin-top: 40px">
+      <div class="stat-card">
+        <div class="stat-number">50</div>
+        <div class="stat-label">People per event</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">3h</div>
+        <div class="stat-label">Monthly commitment</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">10</div>
+        <div class="stat-label">1-on-1s per person</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">$12-28</div>
+        <div class="stat-label">Per attendee</div>
+      </div>
+    </div>
+    <p class="subtitle" style="margin-top: 32px; font-size: 18px">Eitan Sprejer / eitan@baish.com.ar</p>
+    <div class="slide-number">10 / 10</div>
+  </div>
+
+</div>
+
+<div class="nav-hint">Arrow keys or click to navigate</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const progress = document.getElementById('progress');
+  let current = 0;
+
+  function showSlide(n) {
+    if (n < 0 || n >= slides.length) return;
+    slides[current].classList.remove('active');
+    current = n;
+    slides[current].classList.add('active');
+    progress.style.width = ((current + 1) / slides.length * 100) + '%';
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
+      e.preventDefault();
+      showSlide(current + 1);
+    }
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      showSlide(current - 1);
+    }
+  });
+
+  document.addEventListener('click', (e) => {
+    if (e.clientX > window.innerWidth / 2) {
+      showSlide(current + 1);
+    } else {
+      showSlide(current - 1);
+    }
+  });
+
+  showSlide(0);
+</script>
+</body>
+</html>
