@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BlueDot Talent Marketplace - Print Version</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --blue-primary: #1B4FD8;
+    --blue-dark: #0F2E6B;
+    --blue-light: #E8EEFB;
+    --blue-accent: #3B7DFF;
+    --text-dark: #1A1A2E;
+    --text-mid: #4A4A6A;
+    --white: #FFFFFF;
+    --off-white: #F7F8FC;
+    --accent-green: #10B981;
+    --accent-red: #EF4444;
+  }
+  body { font-family: 'Inter', sans-serif; color: var(--text-dark); }
+  .slide {
+    width: 100vw; height: 100vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 60px 80px;
+    page-break-after: always;
+    position: relative;
+  }
+  .bg-white { background: var(--white); }
+  .bg-blue { background: linear-gradient(135deg, var(--blue-dark), var(--blue-primary)); color: white; }
+  .bg-dark { background: var(--text-dark); color: white; }
+  .bg-light { background: var(--off-white); }
+  .brand { position: absolute; top: 30px; left: 40px; font-size: 14px; font-weight: 600; opacity: 0.5; }
+  .num { position: absolute; bottom: 30px; right: 40px; font-size: 14px; opacity: 0.4; }
+  h1 { font-size: 52px; font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 20px; }
+  h2 { font-size: 40px; font-weight: 700; line-height: 1.15; margin-bottom: 16px; }
+  h3 { font-size: 22px; font-weight: 600; margin-bottom: 12px; }
+  .sub { font-size: 20px; line-height: 1.5; opacity: 0.8; max-width: 700px; }
+  .highlight { color: var(--blue-primary); }
+  .bg-blue .highlight { color: #F59E0B; }
+  .bg-dark .highlight { color: var(--blue-accent); }
+  .stats { display: flex; gap: 32px; margin-top: 36px; }
+  .stat { flex: 1; border: 1px solid rgba(0,0,0,0.1); border-radius: 14px; padding: 24px; }
+  .bg-blue .stat, .bg-dark .stat { border-color: rgba(255,255,255,0.15); }
+  .stat-n { font-size: 36px; font-weight: 800; margin-bottom: 4px; }
+  .stat-l { font-size: 14px; opacity: 0.7; }
+  ul.ev { list-style: none; margin-top: 28px; }
+  ul.ev li { font-size: 17px; line-height: 1.5; padding: 8px 0 8px 24px; position: relative; }
+  ul.ev li::before { content: ''; position: absolute; left: 0; top: 15px; width: 9px; height: 9px; border-radius: 50%; background: var(--blue-primary); }
+  .bg-blue ul.ev li::before { background: #F59E0B; }
+  .bg-dark ul.ev li::before { background: var(--blue-accent); }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin-top: 32px; }
+  .card { border: 1px solid rgba(0,0,0,0.1); border-radius: 14px; padding: 28px; }
+  .bg-blue .card, .bg-dark .card { border-color: rgba(255,255,255,0.12); }
+  .card p { font-size: 15px; line-height: 1.6; opacity: 0.8; }
+  .layers { display: grid; grid-template-columns: repeat(5,1fr); gap: 10px; margin-top: 28px; }
+  .layer { border: 1px solid #E5E7EB; border-radius: 10px; padding: 16px 12px; text-align: center; }
+  .layer.hl { background: var(--blue-primary); color: white; border-color: var(--blue-primary); }
+  .layer .ln { font-size: 12px; font-weight: 700; color: var(--blue-primary); margin-bottom: 6px; }
+  .layer.hl .ln { color: rgba(255,255,255,0.7); }
+  .layer .lt { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+  .layer .lk { font-size: 11px; opacity: 0.6; }
+  @media print { .slide { page-break-after: always; } }
+</style>
+</head>
+<body>
+
+<div class="slide bg-blue">
+  <div class="brand" style="color:rgba(255,255,255,0.5)">BlueDot Impact</div>
+  <h1>Curated Talent<br>Marketplace</h1>
+  <p class="sub">Community Lead Work Test / Eitan Sprejer</p>
+  <div class="num">1 / 8</div>
+</div>
+
+<div class="slide bg-white">
+  <div class="brand">BlueDot Impact</div>
+  <h2>The Problem</h2>
+  <p class="sub">BlueDot has trained 7,000+ people. Some are exceptional. There's no fast track to get the best of them into impactful roles, funded projects, or collaborations.</p>
+  <div class="stats">
+    <div class="stat"><div class="stat-n" style="color:var(--accent-red)">10-30%</div><div class="stat-l">of fellowship alumni cycle into another fellowship rather than converting to work</div></div>
+    <div class="stat"><div class="stat-n" style="color:var(--accent-green)">$150M+</div><div class="stat-l">given by Coefficient Giving in 2025, wanting more good applications</div></div>
+  </div>
+  <div class="num">2 / 8</div>
+</div>
+
+<div class="slide bg-dark">
+  <div class="brand" style="color:rgba(255,255,255,0.5)">BlueDot Impact</div>
+  <h2>The Solution</h2>
+  <p class="sub">Monthly, invite-only event in SF. ~50 people, ~3 hours. Ten structured 15-minute 1-on-1s per person, with pre-matching based on profiles.</p>
+  <div class="cols" style="margin-top:32px">
+    <div class="card"><h3>Institutional Leaders (10-15)</h3><p>Funders, hiring managers, program directors. People who can hire, fund, or place talent.</p></div>
+    <div class="card"><h3>Top Talent (30-35)</h3><p>BlueDot's highest-rated alumni. Invited based on course performance and facilitator recommendations.</p></div>
+  </div>
+  <div class="num">3 / 8</div>
+</div>
+
+<div class="slide bg-white">
+  <div class="brand">BlueDot Impact</div>
+  <h2>Why It Works</h2>
+  <p class="sub">EAG events already prove that curated 1-on-1 matching produces career outcomes.</p>
+  <div class="stats">
+    <div class="stat"><div class="stat-n highlight">~10</div><div class="stat-l">meaningful connections per attendee at EAGx events</div></div>
+    <div class="stat"><div class="stat-n highlight">$70</div><div class="stat-l">cost per connection at EAGx (ours: $12-28/attendee)</div></div>
+  </div>
+  <ul class="ev" style="margin-top:24px">
+    <li>We take that proven mechanic and make it <strong>more exclusive</strong> (top talent only)</li>
+    <li><strong>More frequent</strong> (monthly, not a few times per year)</li>
+    <li><strong>More accountable</strong> (dedicated facilitator follow-up with every participant)</li>
+  </ul>
+  <div class="num">4 / 8</div>
+</div>
+
+<div class="slide bg-light">
+  <div class="brand">BlueDot Impact</div>
+  <h2>Why BlueDot</h2>
+  <p class="sub" style="color:var(--text-mid)">Two assets no one else has in the same organization.</p>
+  <div class="cols">
+    <div class="card"><h3>1. Curated talent database</h3><p>Performance data on 7,000+ alumni: course evaluations, project quality, facilitator recommendations.</p></div>
+    <div class="card"><h3>2. Demand-side relationships</h3><p>Direct relationships with funders, safety orgs, and programs. Can get the decision-makers in the room.</p></div>
+  </div>
+  <div class="num">5 / 8</div>
+</div>
+
+<div class="slide bg-dark">
+  <div class="brand" style="color:rgba(255,255,255,0.5)">BlueDot Impact</div>
+  <h2>The Specific Outcome</h2>
+  <p class="sub">Every attendee leaves with at least one concrete opportunity they wouldn't have found otherwise.</p>
+  <ul class="ev" style="margin-top:32px">
+    <li>Job interviews, offers, and hires traced to event connections</li>
+    <li>Funding applications submitted</li>
+    <li>Collaborations and projects started</li>
+  </ul>
+  <p class="sub" style="margin-top:24px">Tracked through <strong>facilitator follow-up calls</strong>, not just surveys. Evidence from EAGx Australia shows surveys alone don't capture real impact at 6 months.</p>
+  <div class="num">6 / 8</div>
+</div>
+
+<div class="slide bg-light">
+  <div class="brand">BlueDot Impact</div>
+  <h2>The System</h2>
+  <p class="sub" style="color:var(--text-mid)">Every event generates data that makes the next one better.</p>
+  <div class="layers">
+    <div class="layer"><div class="ln">LAYER 1</div><div class="lt">Operations</div><div class="lk">Swapcard + Luma</div></div>
+    <div class="layer"><div class="ln">LAYER 2</div><div class="lt">Data Collection</div><div class="lk">Forms + Surveys</div></div>
+    <div class="layer hl"><div class="ln">LAYER 3</div><div class="lt">Participant Tracking</div><div class="lk">Facilitator calls</div></div>
+    <div class="layer"><div class="ln">LAYER 4</div><div class="lt">Outcome Tracking</div><div class="lk">Airtable (live)</div></div>
+    <div class="layer"><div class="ln">LAYER 5</div><div class="lt">Improvement Engine</div><div class="lk">Monthly retros</div></div>
+  </div>
+  <p class="sub" style="margin-top:20px;font-size:17px;color:var(--text-mid)"><strong>Layer 3 is the differentiator.</strong> Every participant gets an assigned facilitator who does monthly calls to convert connections into outcomes.</p>
+  <div class="num">7 / 8</div>
+</div>
+
+<div class="slide bg-blue">
+  <div class="brand" style="color:rgba(255,255,255,0.5)">BlueDot Impact</div>
+  <h2>My Approach</h2>
+  <ul class="ev" style="margin-top:24px">
+    <li>Diagnosed the problem first: where exactly is the talent pipeline breaking?</li>
+    <li>Designed the solution to match that specific bottleneck, then iterated on it</li>
+    <li>Built the system to measure whether it actually works</li>
+  </ul>
+  <p class="sub" style="margin-top:32px">Full documentation in a <strong>Google Doc</strong> and a <strong>GitHub repository</strong> with all research, methodology, and presentation materials.</p>
+  <p class="sub" style="margin-top:24px;font-size:18px">Eitan Sprejer / eitan@baish.com.ar</p>
+  <div class="num">8 / 8</div>
+</div>
+
+</body>
+</html>
