@@ -4,6 +4,7 @@
 **Eitan Sprejer** / eitan@baish.com.ar
 
 **Links:**
+- Loom walkthrough: [Video](https://www.loom.com/share/62a06c03d60a4d548866fcf437b0835a)
 - Airtable base: [BlueDot Talent Marketplace](https://airtable.com/appFrb6UQD9xMbNZU)
 - Repository: [github.com/Eitan-Sprejer/bluedot-work-test](https://github.com/Eitan-Sprejer/bluedot-work-test)
 
